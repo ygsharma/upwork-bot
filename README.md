@@ -1,26 +1,51 @@
-# upwork-bot
+# Upwork Job Alert Bot
 
-This bot pushes the new job from upwork to telegram based on the
-search keywords.
+This Upwork Job Alert Bot is a fully automated system designed to streamline the job search process on Upwork. It automatically pushes new job postings from Upwork to a designated Telegram chat based on specific search keywords, helping users stay ahead in the competitive freelance market.
 
-It also uses redis to store hashes of the urls so that repeated 
-jobs doesn't flood the telegram bot.
+## Features
 
-Right Now it provide jobs in simple format!
-1. Link
-2. Title
-3. Day (how old the gig is) btw I have put condition of not more than 2 days
-4. Budget / Hourly Rate
-5. Category
+- **Immediate Job Alerts:** Sends real-time job postings directly to Telegram.
+- **Duplicate Control:** Utilizes Redis to store URL hashes and prevent duplicate job notifications.
+- **Simplified Job Information:** Presents jobs with essential details including link, title, post age, budget/rate, and category.
+
+## Current Job Information Format
+
+1. **Link:** Direct URL to the job posting.
+2. **Title:** Name of the job.
+3. **Day:** Age of the posting (up to 2 days old).
+4. **Budget / Hourly Rate:** The proposed budget or hourly rate for the job.
+5. **Category:** The field or sector the job is categorized under.
 
 
-Features to be added.
-1. Add multi-chat support, right now it contains static chat-id
-2. Able to manipulate the search terms using telegram (only admin)
-3. Feature to flush the redis keys from telegram (only admin)
-4. Feature to manipulate filters for search
-5. Add country in the message
-6. Store the jobs data into persistent database.
-7. Using persisited data, extract several insights like 'dominant techonology', 'country vs hiring rates', etc.
-8. Create Dashboard to show those insights
+## Installation
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/upwork-bot.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd upwork-bot
+   ```
+
+3. Install the required dependencies:
+   ```bash
+    pip install -r requirements.txt
+   ```
+4. To run the bot, execute the following command in the project directory:
+   ```bash
+   python upwork_bot.py
+   ```
+
+
+## Planned Features
+
+- Multi-chat support for notifications across various Telegram chats.
+- Admin-only command to modify search terms directly via Telegram.
+- Admin-only command to clear Redis keys via Telegram.
+- Enhanced filter options for more refined job search results.
+- Inclusion of country information in job messages.
+- Database integration for persistent storage of job data.
+- Data analysis tools to extract insights such as trending technologies and hiring rates by country.
+- A comprehensive dashboard to display these insights.
